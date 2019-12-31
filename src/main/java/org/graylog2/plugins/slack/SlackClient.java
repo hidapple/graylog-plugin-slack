@@ -5,6 +5,7 @@ import com.google.common.io.ByteStreams;
 import org.apache.commons.lang3.StringUtils;
 import org.graylog2.plugin.configuration.Configuration;
 import org.graylog2.plugins.slack.configuration.SlackConfiguration;
+import org.graylog2.plugins.slack.events.notifications.SlackEventNotificationConfig;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
@@ -30,6 +31,11 @@ public class SlackClient {
     public SlackClient(Configuration configuration) {
         this.webhookUrl = configuration.getString(SlackConfiguration.CK_WEBHOOK_URL);
         this.proxyURL = configuration.getString(SlackConfiguration.CK_PROXY_ADDRESS);
+    }
+
+    public SlackClient(SlackEventNotificationConfig configuration) {
+        this.webhookUrl = configuration.webhookUrl();
+        this.proxyURL = configuration.proxyAddress();
     }
 
     public void send(SlackMessage message) throws SlackClientException {

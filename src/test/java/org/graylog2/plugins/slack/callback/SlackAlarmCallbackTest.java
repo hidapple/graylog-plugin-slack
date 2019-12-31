@@ -31,7 +31,7 @@ public class SlackAlarmCallbackTest {
 
     @Before
     public void setUp() {
-        alarmCallback = new SlackAlarmCallback(Engine.createDefaultEngine());
+        alarmCallback = new SlackAlarmCallback(Engine.createEngine());
     }
 
     @Test

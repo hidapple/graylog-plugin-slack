@@ -9,6 +9,7 @@ import java.net.URI;
 import java.net.URISyntaxException;
 import java.util.Arrays;
 import java.util.Objects;
+import org.graylog2.plugins.slack.events.notifications.SlackEventNotificationConfig;
 
 public class SlackPluginBase {
 
