@@ -4,6 +4,13 @@
     </prerequisites>
     <modelVersion>4.0.0</modelVersion>
 
+    <parent>
+        <groupId>org.graylog.plugins</groupId>
+        <artifactId>graylog-plugin-web-parent</artifactId>
+        <version>3.1.3</version>
+        <relativePath>../graylog2-server/graylog-plugin-parent/graylog-plugin-web-parent</relativePath>
+    </parent>
+
     <groupId>org.graylog.plugins</groupId>
     <artifactId>graylog-plugin-slack</artifactId>
     <version>3.1.0</version>
@@ -58,6 +65,9 @@
     </dependencies>
 
     <build>
+        <resources>
+          <resource><directory>${web.build-dir}</directory></resource>
+        </resources>
         <plugins>
             <plugin>
                 <groupId>org.apache.maven.plugins</groupId>

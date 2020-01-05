@@ -108,8 +108,8 @@ public abstract class SlackEventNotificationConfig implements EventNotificationC
           .channel("")
           .userName("")
           .addBacklogItems("")
-          .notifyChannel("")
-          .linksName("")
+          .notifyChannel(false)
+          .linksName(false)
           .iconUrl("")
           .iconEmoji("")
           .graylog2Url("")
@@ -137,10 +137,10 @@ public abstract class SlackEventNotificationConfig implements EventNotificationC
     public abstract Builder addBacklogItems(String addBacklogItems);
 
     @JsonProperty(CK_NOTIFY_CHANNEL)
-    public abstract Builder notifyChannel(String notifyChannel);
+    public abstract Builder notifyChannel(boolean notifyChannel);
 
     @JsonProperty(CK_LINK_NAMES)
-    public abstract Builder linksName(String linksName);
+    public abstract Builder linksName(boolean linksName);
 
     @JsonProperty(CK_ICON_URL)
     public abstract Builder iconUrl(String iconUrl);
